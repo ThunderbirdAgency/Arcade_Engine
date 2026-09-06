@@ -1,0 +1,174 @@
+{
+  "title": "Credit’s Lair — The Golden Offer",
+  "version": 1,
+  "created": "2026-09-05",
+  "status": "Production plan; illustrated prototype exists. No video generation has run.",
+  "model": "Provider-neutral shot prompts, suitable for reference-conditioned generation such as Higgsfield Seedance 2.5. Confirm model availability and settings in the connected account.",
+  "style_bible": "Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.",
+  "continuity": [
+    "Use the matching artwork as the location and lighting reference; use merchant.webp as the clearest knight face reference.",
+    "Create approved character turnarounds before final multi-shot production.",
+    "In cash and credit branches the knight acquires gold armor; downstream final clips need gold/old-armor variants or framing that avoids the breastplate. The current illustrated prototype uses one shared poster per location.",
+    "Shots for crossroads and bridge introduce locations and supporting characters absent from the posters: use the provided art as a style reference, not a fixed first frame. Approve those new keyframes before final generation.",
+    "Keep the knight moving left to right toward the vault; finish decision shots with a stable neutral pose.",
+    "Render clean images. Interface text, exact amounts, subtitles and game controls are added by the engine.",
+    "Use ambience and foley only for initial clips. Device narration is provided by the prototype; replace it with finished voice tracks in final production.",
+    "Review character continuity, hands, faces, timing, visual readability, and transition frames before accepting any generated clip."
+  ],
+  "shots": [
+    {
+      "id": "arrival",
+      "title": "Enter the kingdom",
+      "duration_seconds": 8,
+      "reference": "/assets/gate.webp",
+      "action": "The knight approaches the open mountain gate. A loose stone shifts under one boot; the knight recovers with exaggerated dignity.",
+      "camera": "Slow forward dolly from a wide rear view; stop behind the knight facing the gate.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach gate.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Enter the kingdom. Duration 8 seconds.\nACTION: The knight approaches the open mountain gate. A loose stone shifts under one boot; the knight recovers with exaggerated dignity.\nCAMERA: Slow forward dolly from a wide rear view; stop behind the knight facing the gate.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "offer",
+      "title": "The golden offer",
+      "duration_seconds": 10,
+      "reference": "/assets/merchant.webp",
+      "action": "The merchant lifts glowing armor, raises a proud eyebrow, then flourishes a parchment that spills down three steps. The knight watches skeptically.",
+      "camera": "Locked medium-wide two-shot. Let the contract movement carry the joke.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach merchant.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: The golden offer. Duration 10 seconds.\nACTION: The merchant lifts glowing armor, raises a proud eyebrow, then flourishes a parchment that spills down three steps. The knight watches skeptically.\nCAMERA: Locked medium-wide two-shot. Let the contract movement carry the joke.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "terms",
+      "title": "The fine print",
+      "duration_seconds": 6,
+      "reference": "/assets/merchant.webp",
+      "action": "The knight leans over the parchment with a ridiculous magnifying glass. The merchant tries to cover the lower half with one gloved hand.",
+      "camera": "Gentle push toward their expressions; keep writing abstract and illegible.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach merchant.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: The fine print. Duration 6 seconds.\nACTION: The knight leans over the parchment with a ridiculous magnifying glass. The merchant tries to cover the lower half with one gloved hand.\nCAMERA: Gentle push toward their expressions; keep writing abstract and illegible.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "cash",
+      "title": "Paid in full",
+      "duration_seconds": 6,
+      "reference": "/assets/merchant.webp",
+      "action": "Coins tumble into the merchant’s hands. He hugs the pile. The knight lifts an almost-empty pouch and looks from the pouch to the armor.",
+      "camera": "Medium two-shot matching the offer; finish on the knight’s reaction.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach merchant.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Paid in full. Duration 6 seconds.\nACTION: Coins tumble into the merchant’s hands. He hugs the pile. The knight lifts an almost-empty pouch and looks from the pouch to the armor.\nCAMERA: Medium two-shot matching the offer; finish on the knight’s reaction.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "credit",
+      "title": "A very small commitment",
+      "duration_seconds": 7,
+      "reference": "/assets/merchant.webp",
+      "action": "The merchant wraps the long parchment around the knight like a luxurious scarf. The knight tries to find its end.",
+      "camera": "Locked medium-wide shot with a small comedic pause on the knight’s face.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach merchant.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: A very small commitment. Duration 7 seconds.\nACTION: The merchant wraps the long parchment around the knight like a luxurious scarf. The knight tries to find its end.\nCAMERA: Locked medium-wide shot with a small comedic pause on the knight’s face.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "keep",
+      "title": "Dents have character",
+      "duration_seconds": 6,
+      "reference": "/assets/merchant.webp",
+      "action": "The knight taps the old breastplate, shrugs happily, and walks away. The merchant produces a tiny polishing brush as a final sales attempt.",
+      "camera": "Medium two-shot; knight exits frame right, preserving travel direction.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach merchant.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Dents have character. Duration 6 seconds.\nACTION: The knight taps the old breastplate, shrugs happily, and walks away. The merchant produces a tiny polishing brush as a final sales attempt.\nCAMERA: Medium two-shot; knight exits frame right, preserving travel direction.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "crossroads",
+      "title": "Luck for sale",
+      "duration_seconds": 8,
+      "reference": "/assets/gate.webp",
+      "action": "A plum-robed peddler near the outer gate holds a small glowing charm between finger and thumb. The knight leans in; the peddler cups a hand for coins.",
+      "camera": "Wide gate view, then a gentle push toward the exchange. Preserve gate architecture.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach gate.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Luck for sale. Duration 8 seconds.\nACTION: A plum-robed peddler near the outer gate holds a small glowing charm between finger and thumb. The knight leans in; the peddler cups a hand for coins.\nCAMERA: Wide gate view, then a gentle push toward the exchange. Preserve gate architecture.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "charm",
+      "title": "Extremely decorative",
+      "duration_seconds": 5,
+      "reference": "/assets/gate.webp",
+      "action": "The knight admires the tiny glowing charm. It gives one proud sparkle. A distant wooden plank drops out of frame behind the knight.",
+      "camera": "Medium shot with the falling plank visible in soft background focus.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach gate.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Extremely decorative. Duration 5 seconds.\nACTION: The knight admires the tiny glowing charm. It gives one proud sparkle. A distant wooden plank drops out of frame behind the knight.\nCAMERA: Medium shot with the falling plank visible in soft background focus.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "reserve",
+      "title": "Coins kept close",
+      "duration_seconds": 5,
+      "reference": "/assets/gate.webp",
+      "action": "The knight closes the coin pouch and nods. The peddler’s smile slowly collapses into theatrical disappointment.",
+      "camera": "Locked two-shot, pause on the peddler’s reaction.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach gate.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Coins kept close. Duration 5 seconds.\nACTION: The knight closes the coin pouch and nods. The peddler’s smile slowly collapses into theatrical disappointment.\nCAMERA: Locked two-shot, pause on the peddler’s reaction.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "bridge",
+      "title": "An unscheduled expense",
+      "duration_seconds": 8,
+      "reference": "/assets/gate.webp",
+      "action": "A bridge keeper gestures at a missing span along the castle road. The knight looks down through the gap and cautiously pulls the foot back.",
+      "camera": "Wide shot showing the gap clearly; slow pan from bridge keeper to knight.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach gate.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: An unscheduled expense. Duration 8 seconds.\nACTION: A bridge keeper gestures at a missing span along the castle road. The knight looks down through the gap and cautiously pulls the foot back.\nCAMERA: Wide shot showing the gap clearly; slow pan from bridge keeper to knight.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "vault",
+      "title": "The treasury interview",
+      "duration_seconds": 8,
+      "reference": "/assets/dragon.webp",
+      "action": "The emerald dragon lowers its head to the knight’s height, grins, and exhales one tiny harmless golden spark. The knight raises a shield.",
+      "camera": "Wide vault view from reference. Gentle push; end with shield raised, before impact.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach dragon.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: The treasury interview. Duration 8 seconds.\nACTION: The emerald dragon lowers its head to the knight’s height, grins, and exhales one tiny harmless golden spark. The knight raises a shield.\nCAMERA: Wide vault view from reference. Gentle push; end with shield raised, before impact.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "reward",
+      "title": "Reward released",
+      "duration_seconds": 6,
+      "reference": "/assets/dragon.webp",
+      "action": "The knight’s shield deflects the tiny spark. The dragon nods reluctantly and nudges a small pile of coins toward the knight with one claw.",
+      "camera": "Medium-wide composition. Keep knight frame left, dragon frame right.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach dragon.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Reward released. Duration 6 seconds.\nACTION: The knight’s shield deflects the tiny spark. The dragon nods reluctantly and nudges a small pile of coins toward the knight with one claw.\nCAMERA: Medium-wide composition. Keep knight frame left, dragon frame right.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "allocation",
+      "title": "Give the gold a job",
+      "duration_seconds": 6,
+      "reference": "/assets/dragon.webp",
+      "action": "The dragon lays a ledger, a lockbox, and an absurd party hat in a row. The knight looks at each item, then looks up at the dragon.",
+      "camera": "Locked medium-wide shot. End in a neutral pose suitable for holding while the player chooses.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach dragon.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Give the gold a job. Duration 6 seconds.\nACTION: The dragon lays a ledger, a lockbox, and an absurd party hat in a row. The knight looks at each item, then looks up at the dragon.\nCAMERA: Locked medium-wide shot. End in a neutral pose suitable for holding while the player chooses.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    },
+    {
+      "id": "ending",
+      "title": "Until the next quest",
+      "duration_seconds": 8,
+      "reference": "/assets/dragon.webp",
+      "action": "The dragon closes its ledger and bows with mock ceremony. The knight steps toward the exit, turns back, and gives a small salute.",
+      "camera": "Gentle widening shot. Keep the ending visually neutral; outcome text is supplied by the game.",
+      "loop": false,
+      "transition": "First 0.5 seconds: stable readable pose. Last 0.75 seconds: settle into a neutral pose. Hold the final frame while the player decides. Do not bake choices or currency amounts into the picture.",
+      "prompt": "REFERENCE: Attach dragon.webp for art direction and location. Attach merchant.webp as the knight identity reference when useful.\nSTYLE: Original theatrical 2D fantasy animation: hand-painted backgrounds, confident ink contours, expressive comedic acting, rich emerald and amber light against midnight indigo. Match the attached reference artwork. Original young adult knight with tousled brown hair, bronze armor, teal cloak and brown leather belt. Original auburn-mustached merchant in plum robes with gold trim. Original enormous emerald dragon with amber eyes. Keep each character’s identity, proportions, costume and handedness consistent within the sequence. 16:9, 1080p master.\nSHOT: Until the next quest. Duration 8 seconds.\nACTION: The dragon closes its ledger and bows with mock ceremony. The knight steps toward the exit, turns back, and gives a small salute.\nCAMERA: Gentle widening shot. Keep the ending visually neutral; outcome text is supplied by the game.\nTIMING: Begin with 0.5 seconds of stable composition, perform the action across the middle, settle into a readable hold for the final 0.75 seconds.\nAUDIO: Original environmental ambience and synchronized foley. Leave spoken narration to the game.\nFINISH: Clean scene without typography, captions, logos, interface elements or a title card. Preserve facial design, clothing, lighting and screen direction from the references. This is one short clip in a branching story."
+    }
+  ]
+}
