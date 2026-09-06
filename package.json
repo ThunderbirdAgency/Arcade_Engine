@@ -1,12 +1,15 @@
 {
   "name": "arcade-engine",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "ArcadeEngine — cinematic interactive stories. First game: Credit’s Lair.",
+  "description": "ArcadeEngine \u2014 cinematic interactive stories. First game: Credit\u2019s Lair.",
   "type": "module",
   "scripts": {
     "build": "node scripts/verify.mjs",
-    "check": "node scripts/verify.mjs"
+    "check": "node scripts/verify.mjs",
+    "dev": "node scripts/dev.mjs"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  }
 }

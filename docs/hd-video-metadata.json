@@ -1,0 +1,173 @@
+[
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/dragon-fail.mp4",
+    "bytes": 4270033
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/dragon-threat.mp4",
+    "bytes": 6750087
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/dragon-win.mp4",
+    "bytes": 7941859
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/gate-fail.mp4",
+    "bytes": 3008969
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/gate-threat.mp4",
+    "bytes": 1984178
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/gate-win.mp4",
+    "bytes": 3946565
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/merchant-fail.mp4",
+    "bytes": 4758911
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/merchant-threat.mp4",
+    "bytes": 4420855
+  },
+  {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "32000"
+      }
+    ],
+    "format": {
+      "duration": "6.080000"
+    },
+    "file": "dist/assets/films/merchant-win.mp4",
+    "bytes": 5024178
+  }
+]

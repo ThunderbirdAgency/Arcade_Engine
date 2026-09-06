@@ -1,29 +1,9 @@
-# Connection status
+# Connections · 2026-09-06
 
-## GitHub
+GitHub: https://github.com/ThunderbirdAgency/Arcade_Engine
 
-User-created repository: https://github.com/ThunderbirdAgency/Arcade_Engine
+Vercel: user deployed `arcade-engine` in Thunderbird Agency. Their dashboard screenshot confirms Ready on main, commit d6de7d1, Git connected, production alias https://arcade-engine-chi.vercel.app. The connected Vercel app still lists no projects and previously rejected production writes with HTTP 403. Do not recreate the project or interpret the connector's empty list as absence of the real deployment. Use GitHub's existing main integration and verify the public application.
 
-The first source import contains the working prototype, original artwork, production prompts, Vercel configuration, and deterministic release checks.
+Higgsfield: connection verified. Seedance 2.5 is available. Nine 720p test clips generated, visually reviewed, and connected for browser testing. Nine final native 1080p clips completed and reviewed following the user's explicit upgrade instruction. One rejected HD gate setup was replaced with a gentler shot. Final films are checked into dist/assets/films as H.264/AAC for browser compatibility. Exact job IDs and prompts are in VIDEO-PRODUCTION.json. Final observed balance after the replacement: 2,072 credits, down 837 from the starting 2,909. Submission estimates total 891 including the replaced shot; billing/refunds are provider-controlled. Do not rerun these jobs merely to recover status.
 
-## Vercel
-
-Requested team: Thunderbird Agency (`thunderbird-agency`). Project name: `arcade-engine`.
-
-Production deployment attempted on 2026-09-06 through the connected Vercel app. Vercel returned HTTP 403: "You don't have permission to create a Production Deployment for this project." No successful deployment URL was returned, and the team's project list remained empty. Publishing and GitHub automatic deployments are not set up yet.
-
-Next action: reconnect Vercel using an account with permission to create projects and production deployments in Thunderbird Agency, then retry the prepared deployment. Alternatively, an authorized team member can import the now-populated repository from https://vercel.com/new using the settings in README.md. Role guidance: https://vercel.com/docs/rbac.
-
-After deployment, verify that the Vercel project is linked to `ThunderbirdAgency/Arcade_Engine`; a direct source-file deployment alone does not prove that future GitHub pushes are connected.
-
-## Higgsfield
-
-Not connected to this conversation as of 2026-09-06. No generated clips or credit charges have been submitted.
-
-The provider's documented ChatGPT route is its official plugin. The official setup page is https://higgsfield.ai/mcp. The user must complete account authorization. Once its tools are available, confirm the connection by reading the credit balance and available video models, then run the prepared prompts against the existing artwork.
-
-Official Add-plugin link: https://chatgpt.com/plugins/plugin_asdk_app_6a3293e129088191abf0875820e839da?q=higgsfield
-
-Provider reference: https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent
-
-Connected-agent generations consume credits; a website Unlimited tier does not imply unlimited API or plugin generations. Confirm applicable account access before submission. Use the approved current artwork as the reference rather than regenerating new character designs.
+The original illustrated Site remains at https://credit-slayer.thunderbird-8781.chatgpt.site. Current feature work targets the GitHub/Vercel application.

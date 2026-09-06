@@ -1,3 +1,5 @@
+> Current cinematic release: see VIDEO-PRODUCTION.json, arcade-media.json and QA.md. The earlier illustrated-story production notes below are retained for reference.
+
 # Animation production
 
 The downloadable prompt pack is in dist/production-pack.json. It contains 14 clip briefs totaling 97 seconds before optional variants.

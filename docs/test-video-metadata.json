@@ -1,0 +1,182 @@
+[
+  {
+    "index": 0,
+    "duration": "6.041667",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "duration": "6.041667",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "duration": "6.050000",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "duration": "6.041667",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "duration": "6.050000",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "duration": "6.041667",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "duration": "6.041667",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "duration": "6.050000",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "duration": "6.050000",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "sample_rate": null
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "sample_rate": "32000"
+      }
+    ]
+  }
+]

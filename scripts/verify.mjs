@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { scenes } from '../dist/story.mjs';
 import { initialState, applyEffect, ending } from '../dist/core.mjs';
-for (const file of ['dist/app.js','dist/story.mjs','dist/core.mjs']) execFileSync(process.execPath,['--check',file]);
+for (const file of ['dist/app.js','dist/story.mjs','dist/core.mjs','dist/arcade.js','dist/arcade-scenes.mjs','scripts/dev.mjs']) execFileSync(process.execPath,['--check',file]);
 let paths=0;const reached=new Set(),outcomes=new Set();
 function walk(id,state,path=[]){
  assert(path.length<25,'Unexpected story cycle');assert(scenes[id],`Unknown scene ${id}`);reached.add(id);
@@ -22,3 +22,8 @@ const media=JSON.parse(fs.readFileSync('dist/media.json'));
 for(const[id,entry]of Object.entries(media)){assert(scenes[id],`Unknown media scene ${id}`);const src=typeof entry==='string'?entry:entry.src;assert(typeof src==='string'&&src.startsWith('/assets/')&&!src.includes('..'));assert(fs.existsSync('dist'+src),`Missing video ${src}`);}
 const html=fs.readFileSync('dist/index.html','utf8');for(const m of html.matchAll(/(?:href|src)="(\/(?!\/)[^"#?]*)"/g))if(m[1]!=='/')assert(fs.existsSync('dist'+m[1]),`Missing ${m[1]}`);
 console.log(`ArcadeEngine verified: ${paths} complete paths, ${reached.size} scenes, ${outcomes.size} endings; assets and media manifest valid.`);
+
+execFileSync(process.execPath,['scripts/test-arcade.mjs'],{stdio:'inherit'});
+const films=JSON.parse(fs.readFileSync('dist/arcade-media.json'));
+assert.equal(Object.keys(films.clips).length,9);
+for(const e of Object.values(films.clips)){assert(e.src&&e.jobId);if(e.src.startsWith('/'))assert(fs.existsSync('dist'+e.src));else assert.equal(new URL(e.src).protocol,'https:');}

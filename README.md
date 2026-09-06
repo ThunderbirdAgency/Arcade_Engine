@@ -1,42 +1,42 @@
-# ArcadeEngine
+# ArcadeEngine · Credit’s Lair
 
-ArcadeEngine turns prerecorded animation and video into playable branching experiences. **Credit’s Lair** is the first game, featuring original painted fantasy artwork and financial decision scenarios.
+A browser-based playable cartoon: watch the threat, respond with mouse, touch or keyboard, then watch the success or comic failure film. First chapter: The Golden Offer. Nine prerecorded, native 1080p films ship with the project (approximately 42 MB total; only the selected branches are played).
 
-## Current release
+Live site: https://arcade-engine-chi.vercel.app
+GitHub: https://github.com/ThunderbirdAgency/Arcade_Engine
+Vercel project: Thunderbird Agency / arcade-engine; main is the production branch.
 
-The first release contains a playable illustrated chapter, 14 scene prompts, three original art references, choices with consequences, coin/debt state, three endings, and an optional arcade timing challenge. The Film room previews local MP4/WebM clips and provides the production prompts.
+## Play
 
-The final Dragon’s Lair-style engine is still in development. Video-synchronized input windows, seamless outcome cuts, animated failure/retry clips, and persistent checkpoints are planned. The existing timing challenge is separate from the video timeline. No Higgsfield generation has run for this release.
+- `/`: Three cinematic encounters: falling gate, contract trap, dragon breath.
+- Arcade: timed choices tied to the film's playback clock; three lives; checkpoint retries; no response is a miss.
+- Guided: freezes the film at each move cue; unlimited retries.
+- Click/tap the move buttons. Arrow keys or WASD select moves; Space ducks in the vault. P/Escape pauses. Sound and full-screen controls are available.
+- `/story.html`: the original longer illustrated financial story with 30 paths and three endings, preserved separately.
 
-## Vercel
+## Develop and verify
 
-Import this repository as **Other**, keep the root directory at the repository root, and use `dist` as the output directory. `vercel.json` supplies the build settings. `node scripts/verify.mjs` checks the story graph, game arithmetic, local assets and video manifest before deployment. No dependencies or environment variables are required to play the prototype.
+No runtime dependencies. Node 22+.
 
-Once the Vercel project is connected to this GitHub repository, main-branch pushes can trigger production deployments and pull requests can receive preview deployments.
+```sh
+npm run dev
+npm run build
+```
 
-## Project layout
+The static development server supports video range requests and the supervised browser preview. Vercel serves `dist`; the build command validates references, syntax, legacy story paths, and cinematic cue boundary decisions.
 
-- `dist/index.html`, `dist/style.css`: the game and Film room interface.
-- `dist/app.js`: playback, choices, local preview, sound and device narration.
-- `dist/story.mjs`: scenes, dialogue, choices and branch destinations.
-- `dist/core.mjs`: deterministic state updates and outcome rules.
-- `dist/assets/`: original game illustrations and future approved video clips.
-- `dist/production-pack.json`: shot prompts, timing, references and continuity guidance.
-- `dist/media.json`: scene-to-video mappings, initially empty.
-- `scripts/verify.mjs`: release verification.
+## Engine files
 
-## Animation connection
+- `dist/arcade.js`: double video player, media loading, playback-clock cues, keyboard/mouse/touch controls, pause/resume, retries and ending.
+- `dist/arcade-scenes.mjs`: scene rules, accepted moves, cue windows, lessons.
+- `dist/arcade-media.json`: explicit scene-to-film mapping.
+- `docs/VIDEO-PRODUCTION.json`: exact prompts, reference artwork and generation job identifiers for test and production runs.
+- `docs/QA.md`: review results and material limits.
 
-The Higgsfield connection runs separately from the public game. Use an authorized Higgsfield plugin or server-side API connection, inspect account/model access, generate a first short reference-conditioned clip, check the output, then continue the shot list. Never put provider keys in the player, GitHub, or prompt pack.
+The financial lesson is fictional: inspect total cost, retain existing armor, preserve 1,000 coins, earn 400. It does not calculate a credit score or promise a lending outcome.
 
-After approving a clip, download it into `dist/assets/`, add its scene mapping to `dist/media.json`, and run `npm run check`. The Film room’s browser previews are temporary and do not publish files.
+## Scope
 
-See `docs/ANIMATION-PRODUCTION.md` and `docs/CONNECTION-STATUS.md` for the production workflow and remaining connections.
+This release is a complete short three-room chapter, not a feature-length game or a clone of copyrighted characters/assets. It uses original artwork with prerecorded branching video. It has no accounts, payments, hosted save files, analytics, editor UI or provider credentials in the browser. The checked-in scene data is the authoring interface. Progress lasts for the current browser visit.
 
-## Learning scope
-
-Game amounts and contract terms are fictional and explicit. The experience explores total cost, timing, and cash reserves. It does not calculate real credit scores or lending eligibility. Game progress is currently in memory for the current visit only.
-
-## Verification limits
-
-The graph and arithmetic checks cover all 30 paths and three endings. Automated browser QA and video-generation integration testing have not yet been performed. Current art is still illustration with camera movement, not finished character animation.
+Do not run generation automatically on page views. All generation takes place through the authorized production workflow; credits are consumed only when jobs are explicitly submitted.
