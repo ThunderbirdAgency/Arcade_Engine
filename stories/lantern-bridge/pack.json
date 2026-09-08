@@ -1,0 +1,510 @@
+{
+  "slug": "lantern-bridge",
+  "provider": "higgsfield-session",
+  "model": "seedance_2_5",
+  "created": "2026-09-08",
+  "stages": {
+    "assets": [
+      {
+        "id": "sheet:pip",
+        "kind": "character-sheet",
+        "target": "pip",
+        "tool": "generate_image",
+        "params": {
+          "model": "nano_banana_pro",
+          "prompt": "Character reference sheet, three-quarter view, full body, neutral pose, plain parchment background, no text. Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Subject: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole. Keep Pip visible. Never change the coat or satchel.",
+          "aspect_ratio": "3:4"
+        },
+        "saveAs": "sheets/pip.webp",
+        "then": "show_reference_elements(action=create) → characters.<id>.element"
+      },
+      {
+        "id": "sheet:troll",
+        "kind": "character-sheet",
+        "target": "troll",
+        "tool": "generate_image",
+        "params": {
+          "model": "nano_banana_pro",
+          "prompt": "Character reference sheet, three-quarter view, full body, neutral pose, plain parchment background, no text. Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Subject: the round, mossy toll troll with a tiny reading monocle and an enormous ledger.",
+          "aspect_ratio": "3:4"
+        },
+        "saveAs": "sheets/troll.webp",
+        "then": "show_reference_elements(action=create) → characters.<id>.element"
+      },
+      {
+        "id": "keyframe:riverbank",
+        "kind": "keyframe",
+        "target": "riverbank",
+        "tool": "generate_image",
+        "params": {
+          "model": "nano_banana_pro",
+          "prompt": "Establishing keyframe, wide shot, no characters, no text. Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Location: a reed-lined riverbank under a full moon, fog rolling over black water.",
+          "aspect_ratio": "16:9"
+        },
+        "saveAs": "keyframes/riverbank.webp"
+      },
+      {
+        "id": "keyframe:bridge",
+        "kind": "keyframe",
+        "target": "bridge",
+        "tool": "generate_image",
+        "params": {
+          "model": "nano_banana_pro",
+          "prompt": "Establishing keyframe, wide shot, no characters, no text. Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Location: a rope bridge strung with paper lanterns over the fog, planks missing at intervals.",
+          "aspect_ratio": "16:9"
+        },
+        "saveAs": "keyframes/bridge.webp"
+      },
+      {
+        "id": "keyframe:tollhouse",
+        "kind": "keyframe",
+        "target": "tollhouse",
+        "tool": "generate_image",
+        "params": {
+          "model": "nano_banana_pro",
+          "prompt": "Establishing keyframe, wide shot, no characters, no text. Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Location: a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern.",
+          "aspect_ratio": "16:9"
+        },
+        "saveAs": "keyframes/tollhouse.webp"
+      }
+    ],
+    "films": [
+      {
+        "id": "film:riverbank",
+        "kind": "film",
+        "clip": "riverbank",
+        "nodeId": "riverbank",
+        "hash": "1e73d3da9561",
+        "status": "missing",
+        "dependsOn": [],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, a reed-lined riverbank under a full moon, fog rolling over black water and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip hurries along the reeds holding the lantern high. At second 3 a rowing boat and a fog-shrouded rope bridge both come into view: the boat to the LEFT, the bridge to the RIGHT. Pip skids to a stop between them, looking left, then right. End with Pip mid-decision, lantern swinging.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{keyframe:riverbank}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/riverbank.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "Setting matches: a reed-lined riverbank under a full moon, fog rolling over black water.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The danger or choice is readable before the move window opens, and the film ends on suspense without resolving it."
+        ]
+      },
+      {
+        "id": "film:riverbank-miss",
+        "kind": "film",
+        "clip": "riverbank-miss",
+        "nodeId": "riverbank-miss",
+        "hash": "7781444aedb6",
+        "status": "missing",
+        "dependsOn": [],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, a reed-lined riverbank under a full moon, fog rolling over black water and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip dithers so long that the lantern gutters out. In the dark Pip steps straight into the shallows with a splash and sits down in the mud, letter held safely overhead. Hold the soggy, exasperated pose.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{keyframe:riverbank}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/riverbank-miss.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "Setting matches: a reed-lined riverbank under a full moon, fog rolling over black water.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The setback is comic and harmless: no injury, blood or gore. Ends on a held pose."
+        ]
+      },
+      {
+        "id": "film:boat",
+        "kind": "film",
+        "clip": "boat",
+        "nodeId": "boat",
+        "hash": "90fcd6574883",
+        "status": "missing",
+        "dependsOn": [
+          "film:riverbank"
+        ],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, a reed-lined riverbank under a full moon, fog rolling over black water and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip climbs into the rowing boat and pushes off. Two strokes in, the boat spins in a lazy circle and drifts gently back to the very same bank. Pip stares at the oars, then at the bridge. End with Pip stepping back onto the bank, resigned.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{clip:riverbank:last}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            },
+            {
+              "role": "video_references",
+              "value": "{{job:riverbank}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/boat.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "Setting matches: a reed-lined riverbank under a full moon, fog rolling over black water.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The outcome is unambiguous and ends with the character positioned for the next scene."
+        ]
+      },
+      {
+        "id": "film:bridge-approach",
+        "kind": "film",
+        "clip": "bridge-approach",
+        "nodeId": "bridge-approach",
+        "hash": "6f28ca8f4bac",
+        "status": "missing",
+        "dependsOn": [
+          "film:riverbank"
+        ],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, a rope bridge strung with paper lanterns over the fog, planks missing at intervals and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip steps onto the rope bridge. At second 2 a plank directly ahead drops away into the fog: Pip must JUMP. At second 5 a low-hanging lantern rope swings at head height from the right: Pip must DUCK. End with Pip crouched safely past the rope, bridge still swaying.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{clip:riverbank:last}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            },
+            {
+              "role": "video_references",
+              "value": "{{job:riverbank}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/bridge-approach.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "Setting matches: a rope bridge strung with paper lanterns over the fog, planks missing at intervals.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The danger or choice is readable before the move window opens, and the film ends on suspense without resolving it."
+        ]
+      },
+      {
+        "id": "film:bridge-fall",
+        "kind": "film",
+        "clip": "bridge-fall",
+        "nodeId": "bridge-fall",
+        "hash": "d58aa268f1dd",
+        "status": "missing",
+        "dependsOn": [],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, a rope bridge strung with paper lanterns over the fog, planks missing at intervals and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip steps onto the missing plank and drops straight through the bridge into the fog with a yelp, then bobs up seconds later on a wide lily pad, hat over one eye, letter dry. Hold the indignant lily-pad pose.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{keyframe:bridge}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/bridge-fall.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "Setting matches: a rope bridge strung with paper lanterns over the fog, planks missing at intervals.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The setback is comic and harmless: no injury, blood or gore. Ends on a held pose."
+        ]
+      },
+      {
+        "id": "film:bridge-clothesline",
+        "kind": "film",
+        "clip": "bridge-clothesline",
+        "nodeId": "bridge-clothesline",
+        "hash": "097e0a0c5c83",
+        "status": "missing",
+        "dependsOn": [],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, a rope bridge strung with paper lanterns over the fog, planks missing at intervals and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip stands tall into the swinging lantern rope, which scoops Pip up and swings out over the fog and back, depositing Pip in a tangle of lanterns on the planks. Hold the tangled, glowing pose.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{keyframe:bridge}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/bridge-clothesline.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "Setting matches: a rope bridge strung with paper lanterns over the fog, planks missing at intervals.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The setback is comic and harmless: no injury, blood or gore. Ends on a held pose."
+        ]
+      },
+      {
+        "id": "film:tollhouse",
+        "kind": "film",
+        "clip": "tollhouse",
+        "nodeId": "tollhouse",
+        "hash": "69e00021e351",
+        "status": "missing",
+        "dependsOn": [
+          "film:bridge-approach"
+        ],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, the round, mossy toll troll with a tiny reading monocle and an enormous ledger, a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. The toll troll blocks the bridge exit, opens the enormous ledger and holds out a mossy palm. Pip pats the satchel: the letter, a single coin, and a shiny stolen-looking spoon. The troll adjusts the monocle and waits. End on the troll’s open palm and Pip’s hovering hand.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{clip:bridge-approach:last}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:troll}}"
+            },
+            {
+              "role": "video_references",
+              "value": "{{job:bridge-approach}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/tollhouse.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "the toll troll appears and matches: the round, mossy toll troll with a tiny reading monocle and an enormous ledger.",
+          "Setting matches: a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The danger or choice is readable before the move window opens, and the film ends on suspense without resolving it."
+        ]
+      },
+      {
+        "id": "film:toll-spoon",
+        "kind": "film",
+        "clip": "toll-spoon",
+        "nodeId": "toll-spoon",
+        "hash": "9d4db7a40cca",
+        "status": "missing",
+        "dependsOn": [],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, the round, mossy toll troll with a tiny reading monocle and an enormous ledger, a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip offers the shiny spoon. The troll peers through the monocle, recognizes its own spoon, and calmly turns the ledger around to reveal a drawing of the very same spoon. Pip is lifted by the collar and set gently back at the bridge entrance. Hold Pip’s sheepish shrug.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{keyframe:tollhouse}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:troll}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/toll-spoon.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "the toll troll appears and matches: the round, mossy toll troll with a tiny reading monocle and an enormous ledger.",
+          "Setting matches: a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The setback is comic and harmless: no injury, blood or gore. Ends on a held pose."
+        ]
+      },
+      {
+        "id": "film:toll-honest",
+        "kind": "film",
+        "clip": "toll-honest",
+        "nodeId": "toll-honest",
+        "hash": "ee058bdeea81",
+        "status": "missing",
+        "dependsOn": [
+          "film:tollhouse"
+        ],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, the round, mossy toll troll with a tiny reading monocle and an enormous ledger, a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip places the single coin in the troll’s palm. The troll inspects it, nods, stamps the ledger with a thump and swings the gate open. The city lights glow beyond. End with Pip walking through the gate.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{clip:tollhouse:last}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:troll}}"
+            },
+            {
+              "role": "video_references",
+              "value": "{{job:tollhouse}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/toll-honest.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "the toll troll appears and matches: the round, mossy toll troll with a tiny reading monocle and an enormous ledger.",
+          "Setting matches: a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The outcome is unambiguous and ends with the character positioned for the next scene."
+        ]
+      },
+      {
+        "id": "film:toll-letter",
+        "kind": "film",
+        "clip": "toll-letter",
+        "nodeId": "toll-letter",
+        "hash": "8d39e71713f6",
+        "status": "missing",
+        "dependsOn": [
+          "film:tollhouse"
+        ],
+        "tool": "generate_video_batch",
+        "params": {
+          "model": "seedance_2_5",
+          "mode": "omni_reference",
+          "prompt": "Hand-painted 1980s theatrical fantasy cartoon: confident ink contours, painted watercolor backgrounds, expressive cel animation, moonlit indigo and lantern-gold palette. Preserve exactly Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole, the round, mossy toll troll with a tiny reading monocle and an enormous ledger, a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern and the character proportions in the reference. Genuine character action, not a slideshow or camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Synchronized Foley and light orchestral score. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep Pip visible. Never change the coat or satchel. 8-second continuous shot. Pip shows the sealed letter. The troll reads the address through the monocle, gasps, and bows deeply: it is addressed to the troll. The troll opens it, reads, and wipes away a tear before opening the gate. End with the troll waving Pip through, still sniffling.",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "{{clip:tollhouse:last}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:pip}}"
+            },
+            {
+              "role": "image_references",
+              "value": "{{sheet:troll}}"
+            },
+            {
+              "role": "video_references",
+              "value": "{{job:tollhouse}}"
+            }
+          ],
+          "duration": 8,
+          "resolution": "1080p",
+          "aspect_ratio": "16:9",
+          "generate_audio": true,
+          "bitrate_mode": "high"
+        },
+        "saveAs": "films/toll-letter.mp4",
+        "verify": [
+          "Pip appears and matches: Pip, a small wiry courier with a satchel, patched green coat and a brass lantern on a pole.",
+          "the toll troll appears and matches: the round, mossy toll troll with a tiny reading monocle and an enormous ledger.",
+          "Setting matches: a crooked wooden tollhouse at the far end of the bridge, lit by one green lantern.",
+          "No titles, lettering, subtitles, UI, watermark or readable text anywhere in frame.",
+          "One continuous shot with genuine character action (not a still with a camera move).",
+          "The outcome is unambiguous and ends with the character positioned for the next scene."
+        ]
+      }
+    ]
+  },
+  "placeholders": {
+    "{{keyframe:<location>}}": "media_id of the location keyframe (upload dist keyframe via media_import_url, or the job id of the keyframe generated in the assets stage).",
+    "{{sheet:<character>}}": "job id or media_id of the character sheet image, or omit when characters.<id>.element is used inline as <<<element_id>>>.",
+    "{{clip:<clip>:last}}": "media_id of the last frame of that film (ingest extracts it to stories/<slug>/frames/<clip>-last.png when ffmpeg is available).",
+    "{{job:<clip>}}": "the provider job id of that film, from media.json."
+  }
+}

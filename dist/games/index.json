@@ -1,0 +1,22 @@
+{
+  "games": [
+    {
+      "slug": "credits-lair",
+      "title": "Credit’s Lair",
+      "episode": "EPISODE 01 · THE GOLDEN OFFER",
+      "tagline": "A brave knight. A very long contract. A dragon with expensive taste.",
+      "poster": "/assets/gate.webp",
+      "playable": true,
+      "films": "9/9"
+    },
+    {
+      "slug": "lantern-bridge",
+      "title": "The Lantern Bridge",
+      "episode": "EPISODE 01 · THE CROSSING",
+      "tagline": "A courier. A river of fog. One bridge that only opens for the honest.",
+      "poster": "/games/lantern-bridge/keyframes/riverbank.webp",
+      "playable": false,
+      "films": "0/10"
+    }
+  ]
+}

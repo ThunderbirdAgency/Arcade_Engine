@@ -1,15 +1,22 @@
 {
   "name": "arcade-engine",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "ArcadeEngine \u2014 cinematic interactive stories. First game: Credit\u2019s Lair.",
+  "description": "ArcadeEngine \u2014 drop in a story, get a playable cinematic cartoon. First game: Credit\u2019s Lair.",
   "type": "module",
   "scripts": {
     "build": "node scripts/verify.mjs",
-    "check": "node scripts/verify.mjs",
-    "dev": "node scripts/dev.mjs"
+    "test": "node scripts/verify.mjs",
+    "unit": "node --test tests/core.test.mjs tests/compile.test.mjs tests/pipeline.test.mjs",
+    "e2e": "node tests/e2e/player.e2e.mjs",
+    "dev": "node scripts/dev.mjs",
+    "story": "node scripts/story.mjs"
   },
   "engines": {
     "node": ">=22"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.124.0",
+    "playwright": "^1.55.0"
   }
 }

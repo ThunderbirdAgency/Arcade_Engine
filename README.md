@@ -1,42 +1,70 @@
-# ArcadeEngine · Credit’s Lair
+# ArcadeEngine
 
-A browser-based playable cartoon: watch the threat, respond with mouse, touch or keyboard, then watch the success or comic failure film. First chapter: The Golden Offer. Nine prerecorded, native 1080p films ship with the project (approximately 42 MB total; only the selected branches are played).
+Drop in a story, get a playable cartoon. ArcadeEngine turns a story file into a Dragon’s Lair-style interactive film:
+watch the scene, hit the right move at the right moment, and the film branches to the outcome. The same engine builds the
+shot list, locks every prompt to the world bible, hands the jobs to Higgsfield, ingests the films, reviews them for
+continuity, and ships the game as static files.
 
-Live site: https://arcade-engine-chi.vercel.app
-GitHub: https://github.com/ThunderbirdAgency/Arcade_Engine
-Vercel project: Thunderbird Agency / arcade-engine; main is the production branch.
+First game: **Credit’s Lair · The Golden Offer**, nine native 1080p films.
+
+Live site: https://arcade-engine-chi.vercel.app · GitHub: https://github.com/ThunderbirdAgency/Arcade_Engine ·
+Vercel: Thunderbird Agency / arcade-engine, `main` is production.
 
 ## Play
 
-- `/`: Three cinematic encounters: falling gate, contract trap, dragon breath.
-- Arcade: timed choices tied to the film's playback clock; three lives; checkpoint retries; no response is a miss.
-- Guided: freezes the film at each move cue; unlimited retries.
-- Click/tap the move buttons. Arrow keys or WASD select moves; Space ducks in the vault. P/Escape pauses. Sound and full-screen controls are available.
-- `/story.html`: the original longer illustrated financial story with 30 paths and three endings, preserved separately.
+* `/` plays the default game; `/?game=<slug>` picks another. The title card lists every playable title.
+* Arcade: timed moves on the film clock, three lives, checkpoint retries, a miss is a miss.
+* Guided: the film holds at every cue, unlimited time, no lives.
+* Mouse, touch, or keyboard: arrows or WASD for directions, Space/Enter for action. P or Escape pauses.
+* `/story.html`: the original illustrated financial story with 30 paths and three endings, preserved as-is.
+
+## How it fits together
+
+```
+stories/<slug>/story.mjs   world bible + node graph            (you write this)
+        │  compile + lint (pipeline/compile.mjs, lint.mjs, prompts.mjs)
+        ├─► dist/games/<slug>/game.json      runtime data for the player
+        └─► stories/<slug>/shots.json        every film with its locked prompt and hash
+                │  pack (pipeline/pack.mjs)
+                └─► stories/<slug>/pack.json  provider-ready jobs: keyframes, character sheets, films in dependency order
+                        │  generate: Higgsfield session (MCP, Seedance 2.5) or HTTP API
+                        │  ingest:   download, probe, last frame, media.json
+                        │  review:   contact sheets + congruency verdicts (Claude) or a human checklist
+                        └─► films in dist, game becomes playable
+engine/core.mjs    pure state machine (graph, beats, moves, lives, checkpoints)   engine/player.mjs   browser cabinet
+```
+
+* [docs/STORY-FORMAT.md](docs/STORY-FORMAT.md): the story format, node types, beats, moves, branching, lint rules.
+* [docs/PIPELINE.md](docs/PIPELINE.md): compile, pack, generate, ingest, review, stitch; providers; costs.
+* [docs/QA.md](docs/QA.md): what was verified and how.
 
 ## Develop and verify
 
 No runtime dependencies. Node 22+.
 
 ```sh
-npm run dev
-npm run build
+npm run dev                          # static preview on :4173 with range requests
+npm test                             # syntax check, unit tests, build every story, integrity checks (Vercel build command)
+npm run unit                         # engine, compiler and pipeline tests only
+npm run story -- <slug> status       # lint | compile | status | plan | pack | ingest | review | stitch | golden
+npm run e2e                          # real-browser run of the player (needs the optional playwright package)
 ```
 
-The static development server supports video range requests and the supervised browser preview. Vercel serves `dist`; the build command validates references, syntax, legacy story paths, and cinematic cue boundary decisions.
+Optional packages: `@anthropic-ai/sdk` enables automatic film review; `playwright` enables browser tests and frame
+extraction without ffmpeg. Neither ships to the browser.
 
-## Engine files
+## Adding a title
 
-- `dist/arcade.js`: double video player, media loading, playback-clock cues, keyboard/mouse/touch controls, pause/resume, retries and ending.
-- `dist/arcade-scenes.mjs`: scene rules, accepted moves, cue windows, lessons.
-- `dist/arcade-media.json`: explicit scene-to-film mapping.
-- `docs/VIDEO-PRODUCTION.json`: exact prompts, reference artwork and generation job identifiers for test and production runs.
-- `docs/QA.md`: review results and material limits.
+1. Copy `stories/lantern-bridge/story.mjs` (a complete demo: branching, four-way moves, multi-beat clips, a unique
+   failure film per wrong move, chapter cards, two endings) to `stories/<slug>/story.mjs` and write your story.
+2. `npm run story -- <slug> lint` until clean, then `plan` to read every prompt the engine will send.
+3. `pack`, submit the jobs in a Higgsfield-connected session, write `results.json`, `ingest`, `review`.
+4. `npm test` builds it; the game appears on the title card as soon as every film is present.
 
-The financial lesson is fictional: inspect total cost, retain existing armor, preserve 1,000 coins, earn 400. It does not calculate a credit score or promise a lending outcome.
+## Scope and rules
 
-## Scope
+Original artwork and characters only. No accounts, payments, analytics or provider credentials in the browser. The checked-in
+story files are the authoring interface. Progress lasts for the current visit. Generation never runs on page views: films are
+made only when jobs are explicitly submitted, and every job id and prompt is recorded in `media.json`.
 
-This release is a complete short three-room chapter, not a feature-length game or a clone of copyrighted characters/assets. It uses original artwork with prerecorded branching video. It has no accounts, payments, hosted save files, analytics, editor UI or provider credentials in the browser. The checked-in scene data is the authoring interface. Progress lasts for the current browser visit.
-
-Do not run generation automatically on page views. All generation takes place through the authorized production workflow; credits are consumed only when jobs are explicitly submitted.
+The financial lesson in Credit’s Lair is fictional and does not calculate a credit score or promise a lending outcome.

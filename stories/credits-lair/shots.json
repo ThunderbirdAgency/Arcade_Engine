@@ -1,0 +1,252 @@
+{
+  "slug": "credits-lair",
+  "production": {
+    "provider": "higgsfield-session",
+    "model": "seedance_2_5",
+    "mode": "omni_reference",
+    "duration": 6,
+    "resolution": "1080p",
+    "aspect": "16:9",
+    "audio": true,
+    "bitrate": "high",
+    "continuity": {
+      "startFrame": "location",
+      "characterReferences": true,
+      "videoReference": false
+    },
+    "assetBase": "https://arcade-engine-chi.vercel.app"
+  },
+  "style": {
+    "look": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette.",
+    "rules": "Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension.",
+    "safety": "Family cartoon: no blood, injury, gore or death; failures are comic setbacks."
+  },
+  "characters": {
+    "knight": {
+      "name": "the knight",
+      "description": "the young adult brown-haired knight, teal cloak, worn bronze armor",
+      "rules": "Keep the knight visible. Never change his armor or add characters.",
+      "sheet": "/assets/merchant.webp"
+    },
+    "merchant": {
+      "name": "the merchant",
+      "description": "the red-haired mustachioed merchant in plum robes with gold trim",
+      "sheet": "/assets/merchant.webp"
+    },
+    "dragon": {
+      "name": "the dragon",
+      "description": "the enormous emerald dragon with amber eyes",
+      "sheet": "/assets/dragon.webp"
+    }
+  },
+  "locations": {
+    "gate": {
+      "name": "the castle gate",
+      "description": "the torchlit stone path before a towering castle gate",
+      "keyframe": "/assets/gate.webp"
+    },
+    "hall": {
+      "name": "the merchant’s hall",
+      "description": "the merchant’s hall with the golden armor on its hanger",
+      "keyframe": "/assets/merchant.webp"
+    },
+    "vault": {
+      "name": "the dragon’s vault",
+      "description": "the gold-strewn vault of the emerald dragon",
+      "keyframe": "/assets/dragon.webp"
+    }
+  },
+  "assets": [
+    {
+      "kind": "character-sheet",
+      "id": "knight",
+      "prompt": "Character reference sheet, three-quarter view, full body, neutral pose, plain parchment background, no text. Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Subject: the young adult brown-haired knight, teal cloak, worn bronze armor. Keep the knight visible. Never change his armor or add characters.",
+      "have": "/assets/merchant.webp",
+      "element": null
+    },
+    {
+      "kind": "character-sheet",
+      "id": "merchant",
+      "prompt": "Character reference sheet, three-quarter view, full body, neutral pose, plain parchment background, no text. Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Subject: the red-haired mustachioed merchant in plum robes with gold trim.",
+      "have": "/assets/merchant.webp",
+      "element": null
+    },
+    {
+      "kind": "character-sheet",
+      "id": "dragon",
+      "prompt": "Character reference sheet, three-quarter view, full body, neutral pose, plain parchment background, no text. Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Subject: the enormous emerald dragon with amber eyes.",
+      "have": "/assets/dragon.webp",
+      "element": null
+    },
+    {
+      "kind": "keyframe",
+      "id": "gate",
+      "prompt": "Establishing keyframe, wide shot, no characters, no text. Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Location: the torchlit stone path before a towering castle gate.",
+      "have": "/assets/gate.webp"
+    },
+    {
+      "kind": "keyframe",
+      "id": "hall",
+      "prompt": "Establishing keyframe, wide shot, no characters, no text. Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Location: the merchant’s hall with the golden armor on its hanger.",
+      "have": "/assets/merchant.webp"
+    },
+    {
+      "kind": "keyframe",
+      "id": "vault",
+      "prompt": "Establishing keyframe, wide shot, no characters, no text. Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Location: the gold-strewn vault of the emerald dragon.",
+      "have": "/assets/dragon.webp"
+    }
+  ],
+  "shots": [
+    {
+      "clip": "gate-threat",
+      "nodeId": "gate",
+      "kind": "scene",
+      "location": "gate",
+      "cast": [
+        "knight"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the torchlit stone path before a towering castle gate and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. Castle approach: the knight walks forward on the stone path. At second 2, a heavy loose stone falls from the gate to the RIGHT half of his path, throwing dust. He stops and crouches, watching a second stone start to slide overhead. The LEFT side stays visibly safe. End on suspense before the second stone lands. Do not show an impact on the knight.",
+      "hash": "ca977bd21246",
+      "duration": 6,
+      "startFrom": {
+        "location": "gate"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "gate-win",
+      "nodeId": "gate-win",
+      "kind": "cut",
+      "location": "gate",
+      "cast": [
+        "knight"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the torchlit stone path before a towering castle gate and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. Successful dodge: immediately the knight leaps decisively to SCREEN LEFT as a heavy stone crashes onto the path to his RIGHT. His teal cloak whips through a graceful arc. He lands safely, glances back at the rubble with comic relief, then runs toward the illuminated open castle gate. Finish with clear survival and forward progress.",
+      "hash": "4248ef0d19d0",
+      "duration": 6,
+      "startFrom": {
+        "location": "gate"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "gate-fail",
+      "nodeId": "gate-fail",
+      "kind": "death",
+      "location": "gate",
+      "cast": [
+        "knight"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the torchlit stone path before a towering castle gate and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. Comedic failure: the knight runs to SCREEN RIGHT into a cloud of dust as a loose gate stone lands just ahead of him. A harmless blast of dust knocks him backward onto his bottom, legs splayed and cloak crumpled. He blinks dazedly and rubs his head. The rock never touches him. Hold the embarrassed defeated pose.",
+      "hash": "d2dfa331fa19",
+      "duration": 6,
+      "startFrom": {
+        "location": "gate"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "merchant-threat",
+      "nodeId": "merchant",
+      "kind": "scene",
+      "location": "hall",
+      "cast": [
+        "knight",
+        "merchant"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the red-haired mustachioed merchant in plum robes with gold trim, the merchant’s hall with the golden armor on its hanger and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. The merchant proudly jiggles the golden armor on its hanger. The long parchment unrolls magically toward the knight’s boots like a creeping snake. The knight notices, raises an eyebrow and reaches toward the parchment. End before he touches it. Gold armor stays on its hanger; the knight keeps his original worn armor. Parchment has no readable writing.",
+      "hash": "ca23d98ce10a",
+      "duration": 6,
+      "startFrom": {
+        "location": "hall"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "merchant-win",
+      "nodeId": "merchant-win",
+      "kind": "cut",
+      "location": "hall",
+      "cast": [
+        "knight",
+        "merchant"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the red-haired mustachioed merchant in plum robes with gold trim, the merchant’s hall with the golden armor on its hanger and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. The knight kneels, carefully examines the long parchment, then decisively rolls it up away from his boots and hands it back to the merchant. He points to his own serviceable breastplate and shakes his head with a knowing smile. The merchant’s broad grin collapses into comic disappointment. Knight turns to leave, cloak swishing, original armor unchanged. Parchment has no readable writing.",
+      "hash": "3faa7e9b4389",
+      "duration": 6,
+      "startFrom": {
+        "location": "hall"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "merchant-fail",
+      "nodeId": "merchant-fail",
+      "kind": "death",
+      "location": "hall",
+      "cast": [
+        "knight",
+        "merchant"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the red-haired mustachioed merchant in plum robes with gold trim, the merchant’s hall with the golden armor on its hanger and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. Comedic contract trap: the knight eagerly reaches for the offered armor. The magical parchment curls around his ankles and torso like a loose ribbon, harmlessly tripping him to sit on the step. The golden armor stays in the merchant’s hands. Knight looks bewildered inside the absurd paper cocoon while the merchant looks sheepish. No readable writing.",
+      "hash": "a72d5e3cb4e8",
+      "duration": 6,
+      "startFrom": {
+        "location": "hall"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "dragon-threat",
+      "nodeId": "dragon",
+      "kind": "scene",
+      "location": "vault",
+      "cast": [
+        "knight",
+        "dragon"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the enormous emerald dragon with amber eyes, the gold-strewn vault of the emerald dragon and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. The dragon inhales, cheeks glowing warm amber, and lowers its snout toward the knight. The knight braces on the left of the frame with his sword held LOW. A few sparks escape the dragon’s nostrils; its impending horizontal flame will pass ABOVE a crouching knight. End at the instant before the breath. No flame impact yet.",
+      "hash": "78b0d65beb85",
+      "duration": 6,
+      "startFrom": {
+        "location": "vault"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "dragon-win",
+      "nodeId": "dragon-win",
+      "kind": "cut",
+      "location": "vault",
+      "cast": [
+        "knight",
+        "dragon"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the enormous emerald dragon with amber eyes, the gold-strewn vault of the emerald dragon and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. The knight immediately DUCKS LOW, one knee on the stone, as a narrow playful golden flame passes safely OVER his head. The dragon stops breathing fire, blinks in surprise, then smiles approvingly and gently nudges a small pile of gold toward the knight with one claw. The knight stands, bows and raises a fist in celebration. Clear dodge followed by reward. No armor or face changes.",
+      "hash": "fccdf47a0979",
+      "duration": 6,
+      "startFrom": {
+        "location": "vault"
+      },
+      "status": "ready"
+    },
+    {
+      "clip": "dragon-fail",
+      "nodeId": "dragon-fail",
+      "kind": "death",
+      "location": "vault",
+      "cast": [
+        "knight",
+        "dragon"
+      ],
+      "prompt": "Animate the supplied original illustration as a lavish hand-drawn 1980s fantasy adventure cartoon: clean ink contours, painted backgrounds, expressive cel animation, teal and amber palette. Preserve exactly the young adult brown-haired knight, teal cloak, worn bronze armor, the enormous emerald dragon with amber eyes, the gold-strewn vault of the emerald dragon and the character proportions in the reference. Genuine character action, not a slideshow or merely a camera zoom. One continuous shot, no cuts, no titles, no lettering, no UI, no subtitles, no dialogue. Subtle synchronized Foley and orchestral tension. Family cartoon: no blood, injury, gore or death; failures are comic setbacks. Keep the knight visible. Never change his armor or add characters. 6-second continuous shot. Comedic failure: the knight remains standing and raises his sword as the dragon blows a brief playful puff of golden fire. A smoke cloud briefly obscures him, then clears to reveal the same unharmed knight with soot on his face and a tiny wisp rising from his hair. He lowers his sword and slumps sheepishly. The dragon raises an eyebrow. Original cloak and armor remain intact.",
+      "hash": "06f456a4607f",
+      "duration": 6,
+      "startFrom": {
+        "location": "vault"
+      },
+      "status": "ready"
+    }
+  ]
+}

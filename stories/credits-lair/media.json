@@ -1,0 +1,158 @@
+{
+  "version": 2,
+  "clips": {
+    "merchant-threat": {
+      "src": "/assets/films/merchant-threat.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "7020ee4b-5d76-4831-8c6a-8f3643f6c357",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051336_7020ee4b-5d76-4831-8c6a-8f3643f6c357.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "gate-threat": {
+      "src": "/assets/films/gate-threat.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "fda36352-b12d-4618-88b5-9959a08f4baa",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_052221_fda36352-b12d-4618-88b5-9959a08f4baa.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "gate-win": {
+      "src": "/assets/films/gate-win.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "fc3f9c32-c22d-493b-ae2e-28c6a0476a62",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051336_fc3f9c32-c22d-493b-ae2e-28c6a0476a62.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "gate-fail": {
+      "src": "/assets/films/gate-fail.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "6cf21cf6-67e5-45f7-a835-77a52d5e0007",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051336_6cf21cf6-67e5-45f7-a835-77a52d5e0007.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "merchant-win": {
+      "src": "/assets/films/merchant-win.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "34c3c9f2-0c9f-4d8c-ae9f-baf9080118f3",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051336_34c3c9f2-0c9f-4d8c-ae9f-baf9080118f3.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "merchant-fail": {
+      "src": "/assets/films/merchant-fail.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "a70d95cb-3e2b-4c40-8e52-c4970f9d7b52",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051336_a70d95cb-3e2b-4c40-8e52-c4970f9d7b52.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "dragon-threat": {
+      "src": "/assets/films/dragon-threat.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "9d076274-290a-46e2-a132-1a9ee2b976f5",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051400_9d076274-290a-46e2-a132-1a9ee2b976f5.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "dragon-win": {
+      "src": "/assets/films/dragon-win.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "1d9790d4-af9a-415e-b02f-271287bf8092",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051400_1d9790d4-af9a-415e-b02f-271287bf8092.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    },
+    "dragon-fail": {
+      "src": "/assets/films/dragon-fail.mp4",
+      "provider": "higgsfield-session",
+      "model": "seedance_2_5",
+      "jobId": "5f3abe3b-a925-4bc0-bb19-6d473d8d6a3e",
+      "sourceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_380hdq2NBbCBxVEmnRCWYaHUcUD/hf_20260906_051400_5f3abe3b-a925-4bc0-bb19-6d473d8d6a3e.mp4",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "generated": "2026-09-06",
+      "review": {
+        "status": "approved",
+        "by": "human",
+        "date": "2026-09-06",
+        "note": "Reviewed for continuity and readable action; see docs/QA.md."
+      }
+    }
+  }
+}
