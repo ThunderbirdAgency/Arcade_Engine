@@ -8,7 +8,8 @@ import { extractFrames, sheetTimes } from './frames.mjs';
 import { verifyChecklist } from './pack.mjs';
 import { loadMedia, saveMedia, STORIES_DIR } from './compile.mjs';
 
-const MODEL = process.env.ARCADE_REVIEW_MODEL || 'claude-opus-5';
+// Claude Fable 5.1 with server-side refusal fallbacks; override with ARCADE_REVIEW_MODEL.
+const MODEL = process.env.ARCADE_REVIEW_MODEL || 'claude-fable-5-1';
 
 export async function review(slug, shots, { distDir = 'dist', only = null, mode = 'auto', frames = true } = {}) {
   const media = loadMedia(slug);
@@ -50,6 +51,12 @@ async function makeClient() {
   try { return new sdk.default(); } catch { return null; }
 }
 
+const REVIEW_SCHEMA = {
+  type: 'object', additionalProperties: false,
+  properties: { pass: { type: 'boolean' }, confidence: { type: 'number' }, issues: { type: 'array', items: { type: 'string' } }, fix: { type: 'string' } },
+  required: ['pass', 'confidence', 'issues', 'fix'],
+};
+
 /** Ask Claude to grade a contact sheet against the checklist. Returns { pass, issues[], fix, confidence }. */
 export async function askClaude(client, shot, checklist, frameFiles) {
   const content = frameFiles.map(f => ({ type: 'image', source: { type: 'base64', media_type: 'image/png', data: fs.readFileSync(f).toString('base64') } }));
@@ -63,20 +70,12 @@ export async function askClaude(client, shot, checklist, frameFiles) {
       '', 'If it fails, write a one-sentence prompt amendment that would fix it on regeneration.',
     ].join('\n'),
   });
-  const res = await client.messages.create({
+  const res = await client.beta.messages.create({
     model: MODEL, max_tokens: 2000,
+    betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default',
+    output_config: { effort: 'high', format: { type: 'json_schema', schema: REVIEW_SCHEMA } },
     system: 'You are a continuity supervisor for a hand-drawn animated adventure game. You review generated films for consistency with the character bible, the location, the described action and the no-text rule. Answer only with the requested JSON.',
     messages: [{ role: 'user', content }],
-    output_config: { format: { type: 'json_schema', schema: {
-      type: 'object', additionalProperties: false,
-      properties: {
-        pass: { type: 'boolean' },
-        confidence: { type: 'number' },
-        issues: { type: 'array', items: { type: 'string' } },
-        fix: { type: 'string' },
-      },
-      required: ['pass', 'confidence', 'issues', 'fix'],
-    } } },
   });
   if (res.stop_reason === 'refusal') return { pass: false, confidence: 0, issues: ['reviewer declined to grade this film'], fix: '' };
   const text = res.content.find(b => b.type === 'text')?.text || '{}';

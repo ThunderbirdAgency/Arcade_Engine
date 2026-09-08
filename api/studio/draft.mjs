@@ -6,7 +6,8 @@ import { briefToMarkdown, briefToStory, storyToModule, slugify } from '../../stu
 import { FORMAT_GUIDE } from '../../studio/guide.mjs';
 import example from '../../stories/lantern-bridge/story.mjs';
 
-const MODEL = process.env.STUDIO_DRAFT_MODEL || 'claude-opus-5';
+// Claude Fable 5.1: thinking is always on (no `thinking` param), depth is set with output_config.effort.
+const MODEL = process.env.STUDIO_DRAFT_MODEL || 'claude-fable-5-1';
 export const config = { maxDuration: 300 };
 
 export default async function handler(req, res) {
@@ -38,7 +39,7 @@ export default async function handler(req, res) {
       const stream = client.beta.messages.stream({
         model: MODEL, max_tokens: 48000, system, messages,
         betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default',
-        output_config: { effort: 'high' },
+        output_config: { effort: 'xhigh' },
       });
       const msg = await stream.finalMessage();
       if (msg.stop_reason === 'refusal') return res.status(422).json({ error: 'The drafting model declined this brief.', detail: msg.stop_details?.explanation || null });

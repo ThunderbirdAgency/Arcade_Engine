@@ -60,7 +60,7 @@ non-fast-start files are reported.
 
 `pipeline/review.mjs` samples five frames per film into `stories/<slug>/review/frames/` and grades them against the film’s
 verify checklist. With the `@anthropic-ai/sdk` package and an `ANTHROPIC_API_KEY` (or `ant auth login` profile) the
-grading is automatic: Claude returns `{ pass, confidence, issues, fix }` as structured JSON and the verdict is written to
+grading is automatic: Claude Fable 5.1 (override with `ARCADE_REVIEW_MODEL`) returns `{ pass, confidence, issues, fix }` as structured JSON and the verdict is written to
 `media.json` (`review.status: approved | rejected`, with the suggested prompt amendment for a regeneration). Without a
 reviewer model, `review/checklist.md` is written for a human pass. In a Higgsfield-connected session, `video_analysis_create`
 can add a scene-by-scene description as a second opinion.

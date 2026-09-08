@@ -18,7 +18,7 @@ middleware.js  Edge middleware that enforces the session on every protected path
 |---|---|---|
 | `STUDIO_PASSWORD` | yes | the one password |
 | `STUDIO_SECRET` | yes | long random string that signs the session cookie (30-day sessions) |
-| `ANTHROPIC_API_KEY` | optional | turns on **Draft with Claude** |
+| `ANTHROPIC_API_KEY` | optional | turns on **Draft with Claude** (Claude Fable 5.1; override with `STUDIO_DRAFT_MODEL`) |
 | `GITHUB_TOKEN` + `GITHUB_REPO` | optional | turns on **Send to workshop branch** (`owner/repo`; a fine-grained token with Contents read/write on that repo) |
 
 Rotate `STUDIO_SECRET` to log every browser out at once. Locally, `npm run dev` uses password `polyester` unless
