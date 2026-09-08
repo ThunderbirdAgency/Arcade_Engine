@@ -10,9 +10,9 @@ import { initialState, applyEffect, ending } from '../dist/core.mjs';
 
 const run = (args, opts = {}) => execFileSync(process.execPath, args, { stdio: 'inherit', ...opts });
 const files = dir => fs.readdirSync(dir).filter(f => f.endsWith('.mjs') || f.endsWith('.js')).map(f => path.join(dir, f));
-for (const f of [...files('engine'), ...files('pipeline'), ...files('pipeline/providers'), ...files('scripts'), 'dist/app.js', 'dist/story.mjs', 'dist/core.mjs']) run(['--check', f]);
+for (const f of [...files('engine'), ...files('pipeline'), ...files('pipeline/providers'), ...files('scripts'), ...files('studio'), ...files('api'), ...files('api/studio'), 'middleware.js', 'web/studio/studio.js', 'dist/app.js', 'dist/story.mjs', 'dist/core.mjs']) run(['--check', f]);
 
-run(['--test', 'tests/core.test.mjs', 'tests/compile.test.mjs', 'tests/pipeline.test.mjs']);
+run(['--test', 'tests/core.test.mjs', 'tests/compile.test.mjs', 'tests/pipeline.test.mjs', 'tests/studio.test.mjs']);
 run(['scripts/build.mjs']);
 
 // Every compiled game: clips referenced by nodes exist in the manifest and on disk (local srcs), index lists it.
@@ -29,9 +29,12 @@ for (const g of index.games) {
   }
 }
 assert(index.games.some(g => g.slug === 'credits-lair' && g.playable), 'Credit’s Lair must stay playable');
-for (const f of ['dist/index.html', 'dist/arcade.css', 'dist/engine/player.mjs', 'dist/engine/core.mjs', 'dist/engine/graph.mjs']) assert(fs.existsSync(f), `missing ${f}`);
-const html = fs.readFileSync('dist/index.html', 'utf8');
-for (const m of html.matchAll(/(?:href|src)="(\/(?!\/)[^"#?]*)"/g)) if (m[1] !== '/') assert(fs.existsSync('dist' + m[1]), `Missing ${m[1]}`);
+for (const f of ['dist/index.html', 'dist/site.css', 'dist/login/index.html', 'dist/studio/index.html', 'dist/studio/studio.js', 'dist/studio/scaffold.mjs', 'dist/studio/lint.mjs', 'dist/play/index.html', 'dist/arcade.css', 'dist/engine/player.mjs', 'dist/engine/core.mjs', 'dist/engine/graph.mjs']) assert(fs.existsSync(f), `missing ${f}`);
+for (const page of ['dist/index.html', 'dist/login/index.html', 'dist/studio/index.html', 'dist/play/index.html']) {
+  const html = fs.readFileSync(page, 'utf8');
+  for (const m of html.matchAll(/(?:href|src)="(\/(?!\/)[^"#?]*)"/g)) { const p = m[1]; if (p === '/' || p.startsWith('/api/')) continue; assert(fs.existsSync('dist' + p) || fs.existsSync('dist' + p + '/index.html') || fs.existsSync('dist' + p + 'index.html'), `${page}: missing ${p}`); }
+}
+run(['--check', 'dist/studio/lint.mjs']); run(['--check', 'dist/studio/prompts.mjs']);
 
 // Legacy illustrated story (story.html): 30 paths, 14 scenes, 3 endings, assets present.
 let paths = 0; const reached = new Set(), outcomes = new Set();

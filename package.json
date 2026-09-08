@@ -7,16 +7,18 @@
   "scripts": {
     "build": "node scripts/verify.mjs",
     "test": "node scripts/verify.mjs",
-    "unit": "node --test tests/core.test.mjs tests/compile.test.mjs tests/pipeline.test.mjs",
-    "e2e": "node tests/e2e/player.e2e.mjs",
+    "unit": "node --test tests/core.test.mjs tests/compile.test.mjs tests/pipeline.test.mjs tests/studio.test.mjs",
+    "e2e": "node tests/e2e/player.e2e.mjs && node tests/e2e/studio.e2e.mjs",
     "dev": "node scripts/dev.mjs",
     "story": "node scripts/story.mjs"
   },
   "engines": {
     "node": ">=22"
   },
-  "optionalDependencies": {
-    "@anthropic-ai/sdk": "^0.124.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0"
+  },
+  "devDependencies": {
     "playwright": "^1.55.0"
   }
 }

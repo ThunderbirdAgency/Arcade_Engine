@@ -1,4 +1,5 @@
-// Build dist/: copy the web shell and engine, compile every story, write the games index.
+// Build dist/: copy the web shell (recursively) and engine, expose the studio modules the browser needs,
+// compile every story, write the games index.
 import fs from 'node:fs';
 import path from 'node:path';
 import { listStories, compileToDisk } from '../pipeline/compile.mjs';
@@ -6,8 +7,13 @@ import { formatLint } from '../pipeline/lint.mjs';
 
 const dist = 'dist';
 fs.mkdirSync(path.join(dist, 'engine'), { recursive: true });
-for (const f of fs.readdirSync('web')) fs.copyFileSync(path.join('web', f), path.join(dist, f));
+fs.mkdirSync(path.join(dist, 'studio'), { recursive: true });
+fs.cpSync('web', dist, { recursive: true });
 for (const f of fs.readdirSync('engine').filter(f => f.endsWith('.mjs'))) fs.copyFileSync(path.join('engine', f), path.join(dist, 'engine', f));
+// The workshop runs the scaffold and the linter in the browser; the linter only imports engine/graph + prompts (crypto-free path).
+fs.copyFileSync('studio/scaffold.mjs', path.join(dist, 'studio', 'scaffold.mjs'));
+fs.writeFileSync(path.join(dist, 'studio', 'lint.mjs'), fs.readFileSync('pipeline/lint.mjs', 'utf8').replace("from '../engine/graph.mjs'", "from '/engine/graph.mjs'").replace("from './prompts.mjs'", "from '/studio/prompts.mjs'"));
+fs.writeFileSync(path.join(dist, 'studio', 'prompts.mjs'), fs.readFileSync('pipeline/prompts.mjs', 'utf8').replace("import { createHash } from 'node:crypto';\n", '').replace(/export function promptHash[\s\S]*?\n}\n/, 'export function promptHash() { return "browser"; }\n'));
 
 const games = [];
 let failed = false;

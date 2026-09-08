@@ -34,7 +34,12 @@ await page.addInitScript(() => {
   Object.defineProperty(HTMLMediaElement.prototype, 'src', { set(v) { window.__played?.(v); desc.set.call(this, v); }, get() { return desc.get.call(this); } });
 });
 
-await page.goto(`${BASE}/?game=credits-lair`);
+// Sign in through the Polyester Publishing staff door first (the games sit behind the password).
+await page.goto(`${BASE}/play/?game=credits-lair`);
+await page.waitForURL(/\/login\/\?next=/);
+await page.fill('#password', process.env.STUDIO_PASSWORD || 'polyester');
+await page.click('#go');
+await page.waitForURL(/\/play\/\?game=credits-lair/);
 await page.waitForFunction(() => document.title.startsWith('Credit'));
 assert.equal(await page.title(), 'Credit’s Lair · ArcadeEngine');
 const status = () => page.$eval('#status', e => e.textContent);

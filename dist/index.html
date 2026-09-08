@@ -1,13 +1,17 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#061714"><meta name="description" content="ArcadeEngine: playable cartoons. Watch the danger, make your move, and live the story."><title>ArcadeEngine · Play the story</title><link rel="stylesheet" href="/arcade.css"></head>
-<body><header class="mast"><a href="/" class="brand">ARCADE<span>ENGINE</span><small>PLAY THE STORY</small></a><nav aria-label="Player controls"><button id="sound" aria-pressed="true">Sound on</button><button id="pause" hidden>Pause Ⅱ</button><button id="fullscreen">Full screen ↗</button></nav></header>
-<main id="cabinet">
- <div class="screen"><img id="poster" src="" alt=""><video id="film-a" playsinline preload="auto" hidden></video><video id="film-b" playsinline preload="auto" hidden></video><div class="shade"></div></div>
- <div class="hud"><span id="chapter"></span><span id="lives" hidden></span></div>
- <section id="title-card" class="title-card"><p id="title-eyebrow" class="eyebrow">A PLAYABLE CARTOON</p><h1 id="title-name">ARCADE<br><em>ENGINE</em></h1><p id="title-tagline" class="intro"></p><button id="start" class="gold">Start the story <span>→</span></button><div class="mode"><label for="difficulty">Play style</label><select id="difficulty"><option value="arcade">Arcade · timed moves, 3 lives</option><option value="guided">Guided · pause at every move</option></select></div><p class="how">Watch the cartoon. When the cue appears,<br>tap a move or use the arrow keys and space.</p><div id="other-games" class="links"></div><div id="links" class="links"></div></section>
- <section id="cue-panel" class="cue-panel" hidden aria-labelledby="cue-text"><p class="eyebrow">YOUR MOVE</p><h2 id="cue-text"></h2><div id="countdown" role="progressbar" aria-label="Time remaining" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div id="time-bar"></div></div><div id="moves" class="moves"></div></section>
- <div id="toast" class="toast" role="status" aria-live="polite"></div>
- <section id="overlay" class="overlay" hidden aria-labelledby="overlay-title"><div class="overlay-card"><p id="overlay-kicker" class="eyebrow"></p><h2 id="overlay-title" tabindex="-1"></h2><p id="overlay-copy"></p><div id="overlay-extra"></div><div id="overlay-actions"></div></div></section>
- <footer class="film-footer"><span id="status">ORIGINAL ART · ANIMATED ADVENTURE</span><span id="room-count"></span></footer>
-</main><footer class="below"><span>Watch carefully. Choose bravely.</span><button id="restart" hidden>Restart ↺</button><span id="disclaimer" class="fiction"></span></footer>
-<script type="module" src="/engine/player.mjs"></script></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Polyester Publishing</title><meta name="description" content="Polyester Publishing is a small independent press. Short books, careful editions, and a few stories you can play."><link rel="stylesheet" href="/site.css"></head>
+<body><div class="wrap">
+<header class="top"><a class="logo" href="/">Polyester Publishing<small>AN INDEPENDENT PRESS</small></a><nav><a href="#titles">Titles</a><a href="#about">About</a><a href="#submissions">Submissions</a></nav></header>
+<div class="hero">
+ <div><p class="eyebrow">EST. IN A SPARE ROOM</p><h1>Small books,<br>made <em>carefully.</em></h1><p>We publish a handful of titles a year: short fiction, illustrated stories, and the occasional book that would rather be played than read. Print runs are small. Attention is not.</p><a class="btn" href="#titles">See the titles</a></div>
+ <div class="book"><i>POLYESTER PUBLISHING</i><b>The Lantern<br>Bridge</b><i>AN ILLUSTRATED STORY · FORTHCOMING</i></div>
+</div>
+<section id="titles"><p class="eyebrow">THE LIST</p><h2>Titles</h2><div class="grid">
+ <div class="card"><h3>The Lantern Bridge</h3><p>A courier, a river of fog, and one bridge that only opens for the honest. An illustrated story in three crossings.</p><small>FORTHCOMING</small></div>
+ <div class="card"><h3>The Golden Offer</h3><p>A reasonably brave knight, a very long contract, and a dragon with expensive taste. A cautionary tale about reading the fine print.</p><small>ILLUSTRATED · PLAYABLE EDITION</small></div>
+ <div class="card"><h3>Field Notes from the Spare Room</h3><p>Occasional letters from the press: what we are making, what went wrong, and what we learned about paper.</p><small>NEWSLETTER</small></div>
+</div></section>
+<section id="about" class="prose"><p class="eyebrow">ABOUT</p><h2>A press the size of a desk</h2><p>Polyester Publishing is one desk, one editor, and a rotating cast of illustrators and friends. We make books slowly and in small numbers. Some are printed. Some are drawn and animated so that the reader gets to choose what the hero does next, and lives with the result.</p><p>We are not a platform, a marketplace, or a service. We are a press.</p></section>
+<section id="submissions" class="prose"><p class="eyebrow">SUBMISSIONS</p><h2>Send us a story</h2><p>We read short manuscripts and story treatments a few times a year. Keep it under 3,000 words, tell us in one line why it needs to exist, and expect a slow reply. Submissions are by post or by invitation; we will publish an address here when the next reading window opens.</p></section>
+<footer class="foot"><span>© Polyester Publishing. All titles are original works.</span><span><a href="/login/">Staff</a></span></footer>
+</div></body></html>

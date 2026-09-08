@@ -216,7 +216,7 @@ async function loadGame() {
   $('disclaimer').textContent = game.disclaimer || '';
   if (game.poster) $('poster').src = game.poster;
   const others = index.games.filter(g => g.slug !== game.slug && g.playable);
-  $('other-games').replaceChildren(...others.map(g => { const a = document.createElement('a'); a.href = `/?game=${g.slug}`; a.textContent = `Play ${g.title} ↗`; a.className = 'archive'; return a; }));
+  $('other-games').replaceChildren(...others.map(g => { const a = document.createElement('a'); a.href = `/play/?game=${g.slug}`; a.textContent = `Play ${g.title} ↗`; a.className = 'archive'; return a; }));
   $('links').replaceChildren(...(game.links || []).map(l => { const a = document.createElement('a'); a.href = l.href; a.textContent = `${l.label} ↗`; a.className = 'archive'; return a; }));
   if (!game.playable) { $('start').disabled = true; toast('This story has no films yet. Run the production pipeline to generate them.'); }
 }

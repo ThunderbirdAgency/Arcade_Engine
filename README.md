@@ -10,9 +10,14 @@ First game: **Credit’s Lair · The Golden Offer**, nine native 1080p films.
 Live site: https://arcade-engine-chi.vercel.app · GitHub: https://github.com/ThunderbirdAgency/Arcade_Engine ·
 Vercel: Thunderbird Agency / arcade-engine, `main` is production.
 
+## The site
+
+The public site at `/` is **Polyester Publishing**, a small press. The engine, the games and the workshop sit behind one
+password at `/login/` (see [docs/STUDIO.md](docs/STUDIO.md) for setup, bot protection and the workshop flow).
+
 ## Play
 
-* `/` plays the default game; `/?game=<slug>` picks another. The title card lists every playable title.
+* `/play/` plays the default game; `/play/?game=<slug>` picks another. The title card lists every playable title.
 * Arcade: timed moves on the film clock, three lives, checkpoint retries, a miss is a miss.
 * Guided: the film holds at every cue, unlimited time, no lives.
 * Mouse, touch, or keyboard: arrows or WASD for directions, Space/Enter for action. P or Escape pauses.
@@ -47,14 +52,15 @@ npm run dev                          # static preview on :4173 with range reques
 npm test                             # syntax check, unit tests, build every story, integrity checks (Vercel build command)
 npm run unit                         # engine, compiler and pipeline tests only
 npm run story -- <slug> status       # lint | compile | status | plan | pack | ingest | review | stitch | golden
-npm run e2e                          # real-browser run of the player (needs the optional playwright package)
+npm run e2e                          # real-browser runs of the player and the workshop (needs playwright, a dev dependency)
 ```
 
-Optional packages: `@anthropic-ai/sdk` enables automatic film review; `playwright` enables browser tests and frame
-extraction without ffmpeg. Neither ships to the browser.
+`@anthropic-ai/sdk` powers film review and workshop drafting on the server; `playwright` (dev only) powers browser tests and
+frame extraction without ffmpeg. Neither ships to the browser.
 
 ## Adding a title
 
+0. Or start in the workshop at `/studio/`: answer the questions, build, and send the result to a `studio/<slug>` branch.
 1. Copy `stories/lantern-bridge/story.mjs` (a complete demo: branching, four-way moves, multi-beat clips, a unique
    failure film per wrong move, chapter cards, two endings) to `stories/<slug>/story.mjs` and write your story.
 2. `npm run story -- <slug> lint` until clean, then `plan` to read every prompt the engine will send.

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Staff · Polyester Publishing</title><link rel="stylesheet" href="/site.css"></head>
+<body><div class="wrap">
+<header class="top"><a class="logo" href="/">Polyester Publishing<small>AN INDEPENDENT PRESS</small></a><nav><a href="/">Back to the press</a></nav></header>
+<div class="login"><form id="login" autocomplete="off"><p class="eyebrow">STAFF ENTRANCE</p><h1>The workshop</h1><p>One password. Ask the editor.</p>
+<label class="field"><span>PASSWORD</span><input type="password" name="password" id="password" autocomplete="current-password" required autofocus></label>
+<label class="hp" aria-hidden="true">Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+<div class="err" id="err" role="alert"></div><button class="btn" type="submit" id="go">Enter</button></form></div>
+<footer class="foot"><span>© Polyester Publishing</span></footer></div>
+<script>
+const f=document.getElementById('login'),err=document.getElementById('err'),go=document.getElementById('go');
+f.onsubmit=async e=>{e.preventDefault();err.textContent='';go.disabled=true;
+ try{const next=new URLSearchParams(location.search).get('next')||'/studio/';
+  const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:f.password.value,company:f.company.value,next})});
+  const j=await r.json().catch(()=>({}));
+  if(r.ok&&j.ok)location.href=j.redirect||'/studio/';else err.textContent=j.error||'Could not sign in.';
+ }catch{err.textContent='Network problem. Try again.';}
+ go.disabled=false;};
+</script></body></html>
